@@ -2,7 +2,7 @@ package com.kenny.wenny.todo.todo.controller;
 
 import com.kenny.wenny.todo.todo.model.request.CreateTodoRequest;
 import com.kenny.wenny.todo.todo.model.database.Todo;
-import com.kenny.wenny.todo.todo.repository.TodoRepository;
+import com.kenny.wenny.todo.todo.service.TodoService;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +18,11 @@ import java.util.List;
 @RequestMapping("todo")
 @RequiredArgsConstructor
 public class TodoController {
-    private final TodoRepository todoRepository;
+    private final TodoService todoService;
 
     @GetMapping
     public ResponseEntity<List<Todo>> getAll() {
-        val todos = todoRepository.findAll();
+        val todos = todoService.getAll();
         return ResponseEntity.ok(todos);
     }
 
@@ -30,9 +30,7 @@ public class TodoController {
     public ResponseEntity<Void> create(
             @RequestBody CreateTodoRequest todo
     ) {
-        val todoObject = new Todo();
-        todoObject.setItem(todo.item());
-        todoRepository.save(todoObject);
+        todoService.create(todo);
         return ResponseEntity.ok().build();
     }
 }
