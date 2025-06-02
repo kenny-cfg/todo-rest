@@ -1,4 +1,6 @@
 create table todo
 (
-    item varchar(255)
+    id   int not null,
+    item varchar(255),
+    primary key (id)
 );
