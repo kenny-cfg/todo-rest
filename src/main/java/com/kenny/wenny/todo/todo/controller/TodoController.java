@@ -1,7 +1,7 @@
 package com.kenny.wenny.todo.todo.controller;
 
-import com.kenny.wenny.todo.todo.CreateTodoRequest;
-import com.kenny.wenny.todo.todo.Todo;
+import com.kenny.wenny.todo.todo.model.request.CreateTodoRequest;
+import com.kenny.wenny.todo.todo.model.database.Todo;
 import com.kenny.wenny.todo.todo.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.val;

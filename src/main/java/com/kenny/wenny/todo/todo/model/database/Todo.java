@@ -1,4 +1,4 @@
-package com.kenny.wenny.todo.todo;
+package com.kenny.wenny.todo.todo.model.database;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
